@@ -2,7 +2,7 @@ package foo.bar;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("p")
 public class HelloService {
     private String mMsg;
 

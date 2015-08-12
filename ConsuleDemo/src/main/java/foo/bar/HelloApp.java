@@ -13,6 +13,10 @@ public class HelloApp {
         HelloService helloService2 = context.getBean("helloService2", HelloService.class);
         System.out.println(helloService2.sayHello());
         System.out.println(helloService2.getMsg());
+
+        HelloService helloService3 = context.getBean("p", HelloService.class);
+        System.out.println(helloService3.sayHello());
+        System.out.println(helloService3.getMsg());
     }
 }
 
