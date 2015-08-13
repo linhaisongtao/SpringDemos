@@ -30,6 +30,7 @@ public class MyResult implements View {
     public void render(Map<String, ?> map, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
         String res = JSON.toJSONString(mR);
         httpServletResponse.getWriter().print(res);
+
     }
 
     private static class R {
