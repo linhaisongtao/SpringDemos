@@ -14,6 +14,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/dns")
 public class HttpDNSController {
+    private static final long FIVE_MINUTES = 1000 * 60 * 5;
 
     @RequestMapping(value = "/servers")
     public MyResult getDNSList(@RequestParam(value = "domain", required = false) String domainsString) {
@@ -23,7 +24,7 @@ public class HttpDNSController {
         if (domainsString != null) {
             domains = domainsString.split(",");
             if (domains != null) {
-                final long expire = System.currentTimeMillis() + 1000 * 3600 * 24;
+                final long expire = System.currentTimeMillis() + FIVE_MINUTES;
                 for (String domain : domains) {
                     System.out.println("domain = " + domain);
                     domainList.add(new Domain(domain, "10.18.20.3", expire));
